@@ -1,4 +1,4 @@
-# Soma — Yoga movement companion
+# Alaya — Yoga movement companion
 
 A small, browser based hackathon prototype for webcam pose landmarks and real time movement feedback. It tracks 33 body landmarks with MediaPipe Pose Landmarker, draws the joints as dots and connecting lines, and estimates a 0–100 pose alignment score for Mountain, Tree, and Warrior II. Camera frames are processed in the browser and are not recorded or uploaded.
 
