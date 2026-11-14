@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <title>Soma — Yoga movement companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">✳</span><span>SOMA<small>MOVE WITH CARE</small></span></a>
+      <div class="top-note"><span class="live-dot"></span> Camera analysis runs on your device</div>
+      <button class="icon-button" id="helpButton" aria-label="Help">?</button>
+    </header>
+
+    <section class="intro">
+      <div><p class="eyebrow">YOUR MOVEMENT, YOUR MOMENT</p><h1>Find your balance.</h1><p class="subhead">A gentle, real-time guide to movement and mindful practice.</p></div>
+      <div class="session-chip"><span>✺</span><div><b>Move at your pace</b><small>There is no perfect score</small></div></div>
+    </section>
+
+    <section class="layout">
+      <div class="stage-card">
+        <div class="stage-head"><div><span class="eyebrow">LIVE SESSION</span><h2 id="stageTitle">Ready when you are</h2></div><div class="status-pill" id="statusPill"><i></i><span>Camera off</span></div></div>
+        <div class="camera-stage" id="cameraStage">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+          <div class="camera-placeholder" id="placeholder"><div class="sun-icon">☼</div><h3>Make a little space</h3><p>Stand where your full body is visible.<br/>Wear clothes that let you move easily.</p></div>
+          <div class="stage-hint" id="stageHint">Your camera view stays on this device</div>
+          <div class="rep-badge hidden" id="holdBadge"><span>HOLD</span><b id="holdTimer">0s</b></div>
+        </div>
+        <div class="stage-actions"><button class="primary-button" id="startButton"><span>☼</span> Start camera</button><button class="secondary-button hidden" id="stopButton">End session</button><p id="cameraMessage">Allow camera access when your browser asks.</p></div>
+      </div>
+
+      <aside class="side-column">
+        <section class="score-card"><div class="score-top"><span class="eyebrow">MOVEMENT SCORE</span><span class="score-caption" id="scoreCaption">WAITING</span></div><div class="score-display"><strong id="scoreValue">--</strong><span>/ 100</span><div class="score-ring" id="scoreRing"><span>✳</span></div></div><p id="scoreMessage">Start the camera to begin your practice.</p><div class="score-meter"><div id="scoreMeter"></div></div><div class="score-foot"><span>Pose alignment</span><b id="alignmentValue">—</b></div><div class="score-foot"><span>Time in pose</span><b id="durationValue">0:00</b></div></section>
+        <section class="pose-card"><div class="section-title"><div><span class="eyebrow">TODAY'S PRACTICE</span><h3>Choose a movement</h3></div><span class="step-count">01 / 03</span></div>
+          <div class="pose-options" role="group" aria-label="Choose a movement">
+            <button class="pose-option selected" data-pose="mountain"><span class="pose-icon">♙</span><span><b>Mountain pose</b><small>Stand tall · 20 seconds</small></span><span class="check">✓</span></button>
+            <button class="pose-option" data-pose="tree"><span class="pose-icon">♧</span><span><b>Tree pose</b><small>Balance · 20 seconds</small></span><span class="check">✓</span></button>
+            <button class="pose-option" data-pose="warrior"><span class="pose-icon">⚔</span><span><b>Warrior II</b><small>Ground and reach · 20 seconds</small></span><span class="check">✓</span></button>
+          </div>
+          <div class="coach-tip"><span>✧</span><p><b id="tipTitle">A steady foundation</b><br/><span id="tipText">Stand with feet beneath hips and let your shoulders soften.</span></p></div>
+        </section>
+        <section class="wellness-card"><span class="wellness-symbol">♡</span><div><span class="eyebrow">CHECK IN WITH YOU</span><p id="wellnessText">How are you feeling right now?</p></div><button id="checkinButton" aria-label="Check in">→</button></section>
+      </aside>
+    </section>
+    <footer><span>SOMA · A mindful movement prototype</span><span>Movement guidance only · Listen to your body</span></footer>
+  </main>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <dialog id="helpDialog"><button class="dialog-close" id="closeHelp">×</button><p class="eyebrow">A NOTE ON YOUR PRACTICE</p><h2>Move with care.</h2><p>Soma estimates pose alignment from body landmarks detected by your webcam. Scores are a playful practice aid, not a medical or fitness assessment. Camera frames are processed in your browser and are not recorded or uploaded.</p><p>Give yourself room, move within a comfortable range, and stop if anything hurts. The wellness check-in is private to this session.</p><button class="primary-button" id="gotIt">Got it</button></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
